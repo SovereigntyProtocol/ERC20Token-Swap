@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how to create ERC20 token swaps with smart contracts in Solidity and integrate them with a Web3 frontend using Ethers.js and Web3.js. Perfect for blockchain developers!">
+    <meta name="keywords" content="ERC20 token, token swap, Solidity, smart contracts, Web3.js, Ethers.js, blockchain development, Ethereum, token swapping, frontend development, JavaScript, HTML, CSS">
+    <meta name="author" content="Arun Kumar Yadav - SovereignT Labs Pvt Ltd">
+    <meta name="robots" content="index, follow">
+
+    <!-- Page Title -->
+    <title>Master ERC20 Token Swaps: Build Smart Contracts and Web3 Frontends</title>
+
+    <!-- Open Graph Meta Tags (Facebook) -->
+    <meta property="og:title" content="Master ERC20 Token Swaps: Build Smart Contracts and Web3 Frontends">
+    <meta property="og:description" content="Step-by-step guide to building ERC20 token swaps with Solidity smart contracts and Web3 frontend integration using Ethers.js and Web3.js.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sovereigntlabs.com/learn">
+    <meta property="og:image" content="https://yourwebsite.com/images/course-thumbnail.png">
+    <meta property="og:site_name" content="Your Website or Brand Name">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Master ERC20 Token Swaps: Build Smart Contracts and Web3 Frontends">
+    <meta name="twitter:description" content="Learn ERC20 token swaps, Solidity smart contracts, and Web3 frontend integration with Ethers.js and Web3.js. Perfect for blockchain enthusiasts!">
+    <meta name="twitter:image" content="https://yourwebsite.com/images/course-thumbnail.png">
+    <meta name="twitter:site" content="@YourTwitterHandle">
+    <meta name="twitter:creator" content="@YourTwitterHandle">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://yourwebsite.com/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"
+        type="application/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <!-- Add ABIs first -->
+    <script src="abis.js"></script>
+    <!-- Then add main script -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h1>Two Token Swap</h1>
+        </div>
+
+        <!-- Wallet Section -->
+        <div class="wallet-section">
+            <button id="connect-wallet">Connect Wallet</button>
+            <p id="wallet-address" class="hidden"></p>
+            <div id="wallet-info" class="hidden">
+                <p id="token-balance">Token Balance: 0</p>
+                <p id="usdt-balance">USDT Balance: 0</p>
+                <button id="disconnect-wallet" class="hidden">Disconnect</button>
+            </div>
+        </div>
+
+        <!-- Swap Box -->
+        <div class="swap-box">
+            <div class="swap-section">
+                <input type="number" id="sell-amount" placeholder="0">
+                <div class="token-display" id="sell-token">
+                    <img src="Arrnaya-sol-token-logo.png" width="36px" alt="Arrnaya" data-token="Arrnaya">
+                </div>
+            </div>
+
+            <button id="swap-button">&#8595;</button>
+
+            <div class="swap-section">
+                <input type="number" id="buy-amount" placeholder="0" disabled>
+                <div class="token-display" id="buy-token">
+                    <img src="https://assets.coingecko.com/coins/images/325/standard/Tether.png?1696501661" alt="USDT"
+                        width="36px" data-token="USDT">
+                </div>
+            </div>
+
+            <button id="swap-action">Swap</button>
+        </div>
+        <div id="qr-popup" class="hidden qr-popup">
+            <div class="qr-popup-content">
+                <span id="close-qr-popup" class="close-popup">&times;</span>
+                <h3>Deposit Address QR Code</h3>
+                <!-- Make sure this is a canvas container -->
+                <canvas id="qr-code"></canvas> <!-- Changed to <canvas> -->
+                <p id="reserve-address"></p>
+            </div>
+        </div>
+        
+        <!-- Reserve Section -->
+        <div class="reserve-section">
+            <!-- <p id="reserve-address"> Swap Contract: </p> -->
+            <div id="reserve-info" class="">
+                <p id="usdt-reserve-balance">Reserve USDT Balance: 0</p>
+                <p id="token-reserve-balance">Token Total Supply: 0</p>
+            </div>
+        </div>
+        <div>
+            <button id="reserve-address-trigger" class="hidden">Show Reserve CA</button>
+        </div>
+
+        <!-- Popup for Notifications -->
+        <div id="popup" class="popup hidden"></div>
+    </div>
+</body>
+
+</html>
