@@ -2,6 +2,10 @@
 
 This repository contains the code for an ERC20 token swap mechanism using a predefined ratio, implemented in Solidity. The project includes a smart contract that handles the swapping of tokens and a frontend interface built with HTML, CSS, and JavaScript. It leverages **Ethers.js** and **Web3.js** for interacting with the smart contract.
 
+Demo link [https://defi-swap-with-solidity.netlify.app/](https://defi-swap-with-solidity.netlify.app/)
+
+Get test BNBs and USDT here: [https://www.bnbchain.org/en/testnet-faucet](https://www.bnbchain.org/en/testnet-faucet)
+
 ---
 
 #### Key Features of the Smart Contract:
@@ -52,7 +56,7 @@ This repository contains the code for an ERC20 token swap mechanism using a pred
 
 #### Getting Started:
 1. **Smart Contract Deployment**:
-   - Deploy the smart contract to an Ethereum testnet or mainnet using Remix or Hardhat.
+   - Deploy the smart contract to an Ethereum/Binance testnet or mainnet using Remix or Hardhat.
 2. **Frontend Setup**:
    - Use the provided HTML, CSS, and JavaScript files to set up the frontend.
    - Update the contract address and ABI in the frontend JavaScript file `script.js` & `abi.js` respectively.
